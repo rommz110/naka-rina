@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hai...</title>
+  <style>
+    body {
+      background: linear-gradient(to top, #fbecec, #fff);
+      font-family: 'Courier New', monospace;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .container {
+      max-width: 600px;
+      width: 100%;
+      margin-top: 30px;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      height: 80vh;
+      overflow-y: auto;
+    }
+
+    #typing-text {
+      white-space: pre-line;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .emoji {
+      font-size: 24px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #fbb;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #f99;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="typing-text"></h1>
+    <p class="emoji">🌷🤍❤️🩷💛</p>
+    <button onclick="document.getElementById('bg-music').play()">▶️ Play Musik</button>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="Akhir-Tak-Bahagia.mp3" type="audio/mpeg">
+
+  </audio>
+
+  <script>
+    const text = `Hai…
+
+Play dulu dong musiknya..
+
+
+
+
+Happy anniversary buat kita, aku dan kamu.
+Lucu ya, kita masih nyebut “kita”, padahal udah beda banget sekarang.
+
+Aku tahu semua udah berubah. Dari yang dulu rame, sekarang seadanya.
+Waktu kamu minta selesai, aku nggak siap.
+Aku pikir masih bisa diperbaiki. Tapi ternyata, aku salah.
+
+Maaf ya... aku udah bikin kamu terbiasa tanpa aku.
+Aku coba berubah pelan-pelan, dan sedikit sabar, tapi ternyata aku ngerasa sendirian di situ.
+Harusnya dulu aku lepasin kamu, tapi aku malah tahan kamu di 
+tempat yang seharusnya udah kamu tinggal dari awal.
+
+Sekarang aku sadar, gak semua yang rusak harus diperbaiki.
+Kadang… emang harus dilepas.
+Terima kasih udah pernah buat aku senyum dan ketawa.
+Hari ini, kita cukup sampai disini ya...
+
+Semoga nanti, yang dapetin kamu bisa lihat kamu sepenuhnya—
+gak cuma cara ketawa kamu,
+tapi juga hal-hal kecil yang kamu simpan sendiri.
+Semoga dia peka, bisa ngerti bahasa diam kamu,
+makna “gapapa” kamu,
+dan jadi rumah yang gak perlu kamu pura-pura di dalamnya.
+Aamiin...
+
+aku pamit yaa^-^`;
+
+    let i = 0;
+    const speed = 120;
+
+    function typeWriter() {
+      if (i < text.length) {
+        const char = text.charAt(i) === "\n" ? "<br>" : text.charAt(i);
+        document.getElementById("typing-text").innerHTML += char;
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
