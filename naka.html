@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background:#ffe6f0;
+    margin-top:100px;
+}
+
+h1{
+    color:#ff4d6d;
+}
+
+button{
+    border:none;
+    padding:15px 30px;
+    margin:10px;
+    font-size:20px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#yesBtn{
+    background:#4CAF50;
+    color:white;
+}
+
+#noBtn{
+    background:#ff4d6d;
+    color:white;
+}
+
+#message{
+    margin-top:20px;
+    font-size:24px;
+    color:#d63384;
+    font-weight:bold;
+}
+</style>
+</head>
+<body>
+
+<h1>lysaa mauu ituu?</h1>
+
+<button id="yesBtn">Yes 💖</button>
+<button id="noBtn">No 💔</button>
+
+<p id="message"></p>
+
+<script>
+const sadMessages = [
+    "I'm so sad... 😢",
+    "Please think again... 🥺",
+    "pliss sayyaaang",
+    "ayoooo sayaaang",
+    "I'm gonna cry... 😭",
+    "Really? 🥹",
+    "hiks💔",
+    "Last chance... 🥺❤️"
+];
+
+let count = 0;
+let yesSize = 20;
+
+document.getElementById("noBtn").addEventListener("click", function() {
+
+    document.getElementById("message").innerText =
+        sadMessages[Math.min(count, sadMessages.length - 1)];
+
+    yesSize += 10;
+
+    document.getElementById("yesBtn").style.fontSize =
+        yesSize + "px";
+
+    count++;
+});
+
+document.getElementById("yesBtn").addEventListener("click", function() {
+    document.body.innerHTML = `
+        <div style="margin-top:150px;">
+            <h1 style="font-size:60px;color:#ff4d6d;">
+                YAYyy NANTII PAS AKU CHAT YAA MWAHH
+            </h1>
+            <h2>AKUU TUNGGUU YAAA CAYAANG MAACII</h2>
+        </div>
+    `;
+});
+</script>
+
+</body>
+</html>
